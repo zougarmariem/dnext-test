@@ -6,6 +6,7 @@ import { useFile } from "../../hooks/useFile";
 
 import { MONTHS } from "../../constants/months";
 import { useExerciceContext } from "../../hooks/useExerciceContext";
+import { ACTIONS } from "../../constants/actions";
 
 const Dashboard = () => {
   // File
@@ -71,7 +72,7 @@ const Dashboard = () => {
         ],
       });
       dispatch({
-        type: "DISABLE_GROUP_BY_YEAR",
+        type: ACTIONS.DISABLE_GROUP_BY_YEAR,
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -100,7 +101,7 @@ const Dashboard = () => {
         ],
       });
       dispatch({
-        type: "DISABLE_GROUP_BY_MONTH",
+        type: ACTIONS.DISABLE_GROUP_BY_MONTH,
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -121,7 +122,7 @@ const Dashboard = () => {
         ],
       });
       dispatch({
-        type: "DISABLE_GROUP_BY_CODE",
+        type: ACTIONS.DISABLE_GROUP_BY_CODE,
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

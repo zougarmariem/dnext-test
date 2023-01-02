@@ -5,6 +5,7 @@ import { useExerciceContext } from "./useExerciceContext";
 
 // Helpers
 import { fetchExcelFile } from "../helpers/file";
+import { ACTIONS } from "../constants/actions";
 
 export const useFile = () => {
   const { state, dispatch } = useExerciceContext();
@@ -19,7 +20,7 @@ export const useFile = () => {
           setLoading(true);
           const fileContent = await fetchExcelFile("random_data.csv");
           dispatch({
-            type: "FETCH_DATA",
+            type: ACTIONS.FETCH_DATA,
             contents: fileContent,
           });
         } catch (error) {

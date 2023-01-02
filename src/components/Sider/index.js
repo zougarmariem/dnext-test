@@ -19,6 +19,7 @@ import { useExerciceContext } from "../../hooks/useExerciceContext";
 
 // Style
 import "./style.scss";
+import { ACTIONS } from "../../constants/actions";
 
 const Sider = () => {
   const { dispatch } = useExerciceContext();
@@ -33,17 +34,17 @@ const Sider = () => {
     setInit(false);
     if (value === "code") {
       dispatch({
-        type: "GROUP_BY_CODE",
+        type: ACTIONS.GROUP_BY_CODE,
       });
     }
     if (value === "year") {
       dispatch({
-        type: "GROUP_BY_YEAR",
+        type: ACTIONS.GROUP_BY_YEAR,
       });
     }
     if (value === "month") {
       dispatch({
-        type: "GROUP_BY_MONTH",
+        type: ACTIONS.GROUP_BY_MONTH,
       });
     }
   };
@@ -106,7 +107,7 @@ const Sider = () => {
       <Button
         onClick={() => {
           dispatch({
-            type: "FILTER_BY_CODE",
+            type: ACTIONS.FILTER_BY_CODE,
             code,
           });
         }}
@@ -127,7 +128,7 @@ const Sider = () => {
       <Button
         onClick={() => {
           dispatch({
-            type: "FILTER_BY_ID",
+            type: ACTIONS.FILTER_BY_ID,
             id,
           });
         }}

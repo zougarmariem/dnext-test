@@ -11,15 +11,21 @@ export const exerciceReducer = (state, action) => {
     case ACTIONS.FILTER_BY_CODE: {
       return {
         ...state,
-        contents: [
-          ...state.contents.filter((item) => item.code === action.code),
-        ],
+        contents: state.contents
+          ? [
+              ...state.contents.filter(
+                (item) => item.code.toLowerCase() === action.code.toLowerCase()
+              ),
+            ]
+          : [],
       };
     }
     case ACTIONS.FILTER_BY_ID: {
       return {
         ...state,
-        contents: [...state.contents.filter((item) => item.id === action.id)],
+        contents: state.contents
+          ? [...state.contents.filter((item) => item.id === action.id)]
+          : [],
       };
     }
     case ACTIONS.GROUP_BY_CODE: {
